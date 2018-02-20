@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public  void bigSorting(String[] arr) {
+      BigInteger[] s=new BigInteger[arr.length];
+
+        for(int unsorted_i=0; unsorted_i < arr.length; unsorted_i++){
+            s[unsorted_i]=new BigInteger(arr[unsorted_i]);
+        }
+
+
+        Arrays.sort(s);
+
+        for(int unsorted_i=0; unsorted_i < arr.length; unsorted_i++){
+           System.out.println(s[unsorted_i]);
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        String[] arr = new String[n];
+        for(int arr_i = 0; arr_i < n; arr_i++){
+            arr[arr_i] = in.next();
+        }
+        Solution sc = new Solution();
+        sc.bigSorting(arr);
+     
+    }
+}
