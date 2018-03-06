@@ -1,0 +1,57 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static void insertionSort1(int n, int[] arr) {
+        int[] ar = new int[n];
+        int temp = 0;
+        
+       for(int i=1;i<n;i++){
+           temp = arr[i];
+           for(int j=i-1;j >= 0;j--){
+               if(temp<arr[j]){
+                   arr[j+1] = arr[j];
+                   for(int k=0;k<n;k++){
+                    System.out.print(arr[k]+" ");
+                   }
+                    System.out.println();
+                  if(j>=1){
+                     if(arr[j-1]<temp){
+                       arr[j]=temp;
+                      for(int m=0;m<n;m++){
+                          System.out.print(arr[m]+" ");  
+                        } 
+                       System.out.println();
+                   }  
+                  }else{
+                      if(temp <arr[0]){
+                          arr[0] = temp;
+                           for(int p=0;p<n;p++){
+                          System.out.print(arr[p]+" ");  
+                        } 
+                       System.out.println();
+                      }
+                  }
+                
+                
+               }
+               
+           }  
+       }
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] arr = new int[n];
+        for(int arr_i = 0; arr_i < n; arr_i++){
+            arr[arr_i] = in.nextInt();
+        }
+        insertionSort1(n, arr);
+        in.close();
+    }
+}
